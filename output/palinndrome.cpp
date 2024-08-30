@@ -23,7 +23,6 @@ bool isPalindrome(char arr[],int size){
     }
     return true;
 }
-
 int main() 
 {
     char arr[100] = "abcdeffedcba";
