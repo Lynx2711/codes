@@ -12,6 +12,11 @@ class Node{
     }
 };
 
+int search(){
+
+    
+}
+
 int main(){
     Node* head = NULL;
 }
