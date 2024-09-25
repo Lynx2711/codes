@@ -114,4 +114,28 @@ class Character{
     void defend(){
 
     }
+    void display(){
+        //character details:
+        cout<<"Name: "<<name<<endl;
+        cout<<"Type: "<<type<<endl;
+        cout<<"Health: "<<health<<endl;
+        cout<<"Attack Power: "<<attackPower<<endl;
+        cout<<"Defence Power: "<<defencePower<<endl;
+        if(type=="Mage"){
+            cout<<"Magic Power: "<<magicPower<<endl;
+        }
+    }
 };
+
+int main(){
+    Character warrior("Itto","Warrior",100,50,50);
+    Character mage("Jinx","Mage",100,25,50);
+    Character archer("Ranni","Archer",100,50,40);
+    Character necromancer("Rades","Necromancer",100,100,100);
+
+    cout<<"Character details: "<<endl;
+    warrior.display();
+    mage.display();
+    archer.display();
+    necromancer.display();
+}
