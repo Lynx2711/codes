@@ -96,8 +96,8 @@ int main(){
     child1.num;  //child class will have access to parent class vice versa is not true
 }*/
 
-Background:
-
+//Background:
+/*
 You have been tasked with developing a wildlife management system for a vast jungle that hosts different types of animals, including Mammals, Birds, and Reptiles. The system should classify these animals based on their characteristics using inheritance concepts. Each animal type will have specific attributes and abilities, and you'll need to implement a system that can manage these animals using multiple inheritance, multilevel inheritance, and hierarchical inheritance.
 
 Your task is to design a program using C++ object-oriented programming concepts to simulate the wildlife management system for the jungle.
@@ -183,4 +183,4 @@ Age: 3 years
 Weight: 50 kg
 Wing Span: 3 meters
 Is Venomous: True
-Call the methods displayInfo(), fly(), crawl(), and glide() to simulate the behavior of the flying reptile.
+Call the methods displayInfo(), fly(), crawl(), and glide() to simulate the behavior of the flying reptile.*/
