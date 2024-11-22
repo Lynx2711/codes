@@ -1,22 +1,48 @@
-//dfs: depth first  search
-//adjacency list to contain all the adjacent nodes, visited to check if a node is already visited or not(if visited, we move on and check if other neighbours are already visited or not), 
-//at first all the nodes will be false in visited
+#include <iostream>
+using namespace std;
 
-void dfs(int n, unordered_map<int, bool> &visited, unordered_map<int, list<int>> adj, )
-vector<vector<int>> depthFirstSearch(int V,int E,vector<vector<int>> &edges){
-    //adj list
-    unordered_map<int, list<int>> adj;
-    for(int i=0;i<edges.size();i++){
-        int u = edges[i][0];
-        int v = edges[i][1];
-        adj[u].push_back[v];
-        adj[v].push_back[u];
-    }
-    vector<vector<int>> ans;
-    unordered_map<int, bool> visited;
-    for(int i = 0;i<V;i++){
-        if(visited[i]){
-            dfs();
+void dfsUtil(int node, int adj[][100], bool visited[], int v, int result[], int &index) {
+    visited[node] = true;
+    result[index++] = node; // Add the current node to the result array
+
+    for (int i = 0; i < v; ++i) {
+        if (adj[node][i] == 1 && !visited[i]) {
+            dfsUtil(i, adj, visited, v, result, index); // Recursive call for unvisited neighbors
         }
     }
+}
+
+int* dfs(int v, int adj[][100], int &resultSize) {
+    static int result[100];
+    bool visited[100] = {false};
+    int index = 0;
+
+    dfsUtil(0, adj, visited, v, result, index); // Start DFS from node 0
+    resultSize = index;
+    return result;
+}
+
+int main() {
+    int v, e;
+    cin >> v >> e;
+
+    int adj[100][100] = {0}; // Adjacency matrix
+    // Input the edges
+    for (int i = 0; i < e; ++i) {
+        int node1, node2;
+        cin >> node1 >> node2;
+        adj[node1][node2] = 1;
+        // Uncomment the next line for an undirected graph
+        // adj[node2][node1] = 1;
+    }
+
+    int resultSize;
+    int* result = dfs(v, adj, resultSize);
+
+    for (int i = 0; i < resultSize; ++i) {
+        cout << result[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
