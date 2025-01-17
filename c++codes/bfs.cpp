@@ -113,6 +113,7 @@ int main() {
 using namespace std;
 
 bool dfs(int node, int end, int adj[][100], bool visited[], int n) {
+    //BASE CASE 
     if (node == end) 
         return true;
 
@@ -203,12 +204,6 @@ bool BFS(int adj[][100], int src, int dest, int v, int pred[], int dist[]) {
     return false;
 }
 
-void printShortestDistance(int adj[][100], int s, int dest, int v, int pred[], int dist[]) {
-    // If the destination is unreachable
-    if (dist[dest] == INT_MAX) {
-        cout << "No path exists" << endl;
-        return;
-    }
 
     // Trace the path from destination to source
     void printShortestDistance(int adj[][100], int s, int dest, int v, int pred[], int dist[]) {
